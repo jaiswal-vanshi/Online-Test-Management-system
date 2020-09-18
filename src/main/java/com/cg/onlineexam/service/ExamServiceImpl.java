@@ -1,5 +1,6 @@
 package com.cg.onlineexam.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ public class ExamServiceImpl implements ExamService{
 	@Autowired
 	private IExamDao examDao;
 
+	//Add Exam
 	@Override
 	@Transactional
 	public String addExam(ExamDto examDto)throws ExamAddException {
@@ -30,9 +32,14 @@ public class ExamServiceImpl implements ExamService{
 		examDao.save(exam);
 		return ExamConstants.ADD_EXAM;
 	}
+
+	//View All Exams
+	@Override
+	public List<Exam> viewAllExam() {
+		return examDao.findAll();
+	}
+
 	
-	/*public Integer getNextIdForExam() {
-		return examDao.getMaxId() + 1;
-	}*/
+	
 
 }

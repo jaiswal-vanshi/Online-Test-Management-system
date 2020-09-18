@@ -9,7 +9,7 @@ public class ExamAssignDto {
 
 	private int examId;
 	private int userId;
-	@DateTimeFormat(pattern = "yyyy-M-d") 
+	@DateTimeFormat(pattern = "yyyy-MM-dd") 
 	private LocalDate doe;
 	public int getExamId() {
 		return examId;

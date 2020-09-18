@@ -8,7 +8,6 @@ import com.cg.onlineexam.entity.Exam;
 
 @Repository
 public interface IExamDao extends JpaRepository<Exam, Integer>{
-	/*@Query(value="select max(examId) from Exam")
-	public Integer getMaxId();*/
+	
 
 }
