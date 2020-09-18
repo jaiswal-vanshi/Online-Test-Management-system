@@ -1,0 +1,27 @@
+<section class="col-md-4 mx-auto">
+    <h2 class="text-center">Assign Exam To User</h2>
+   
+   <div class="alert alert-success" *ngIf="msg != undefined">{{msg}}</div>
+    <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
+  
+  <form #frm="ngForm" (ngSubmit)="assignExamToUser()">
+    <div>User Id</div>
+  <div><input type="number" name="userId" [(ngModel)]="assignexam.userId" required #mlsal="ngModel" class="form-control"/></div>
+  <div class="alert alert-danger" *ngIf="mlsal.invalid && mlsal.touched">User Id required</div>
+  
+    
+    <div>Exam Id</div>
+  <div><input type="number" name="examId" [(ngModel)]="assignexam.examId" required #mlsal="ngModel" class="form-control"/></div>
+  <div class="alert alert-danger" *ngIf="mlsal.invalid && mlsal.touched">Exam Id required</div>
+    
+    
+    <div>Date of Exam</div>
+  <div><input type="date" name="doe" [(ngModel)]="assignexam.doe" required #mlsal="ngModel" class="form-control"/></div>
+  <div class="alert alert-danger" *ngIf="mlsal.invalid && mlsal.touched">Date of exam required</div>
+    
+    <div class="mt-2 text-center"><input type="submit" value="Assign Exam" [disabled]="!frm.valid" class="btn btn-danger"/>
+    </div>
+    
+  </form>
+  </section>
+

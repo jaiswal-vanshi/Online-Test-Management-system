@@ -1,0 +1,17 @@
+
+<section class="col-md-4 mx-auto">
+    <h2 class="text-center" *ngIf="viewExamFlag">View Exam</h2>
+  
+    <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" >
+    <tr>
+      <th>Exam ID</th>
+        <th>Emp Name</th>
+        <th>Minutes</th>
+    </tr>
+    <tr *ngFor ="let e of exams">
+          <td>{{e.examId}}</td>
+      <td>{{e.examName | titlecase}}</td>
+      <td>{{e.minutes }}</td>
+    </tr>
+  </table>
+  </section>

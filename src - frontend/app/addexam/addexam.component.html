@@ -1,0 +1,26 @@
+
+<section class="col-md-4 mx-auto">
+  <h2 class="text-center" *ngIf="addExamFlag">Add Exam</h2>
+ 
+ <div class="alert alert-success" *ngIf="msg != undefined">{{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errorMsg != undefined">{{errorMsg}}</div>
+
+
+<form #examfrm="ngForm" (ngSubmit)="addExam()">
+  <div>Exam ID</div>
+  <div><input type="number" name="eid" [(ngModel)]="exam.examId" required #modeleid="ngModel" class="form-control"></div>
+  <div class="alert alert-danger" *ngIf="modeleid.invalid && modeleid.touched">Exam ID is required</div>
+
+  <div>Exam Name</div>
+  <div><input type="text" name="ename" [(ngModel)]="exam.examName" required #mlename="ngModel" class="form-control"/></div>
+  <div class="alert alert-danger" *ngIf="mlename.invalid && mlename.touched">Exam Name is required</div>
+
+  <div>Minutes Of Exam</div>
+  <div><input type="number" name="sal" [(ngModel)]="exam.minutes" required #mlsal="ngModel" class="form-control"/></div>
+  <div class="alert alert-danger" *ngIf="mlsal.invalid && mlsal.touched">Minutes is required</div>
+
+  <div class="mt-2 text-center"><input type="submit" value="Add Exam" [disabled]="!examfrm.valid" class="btn btn-danger"/>
+  </div>
+  
+</form>
+</section>
